@@ -104,11 +104,9 @@ terraform destroy
 
 Or delete the Resource Group directly:
 
-Go to Azure Portal
-
-Open Resource groups
-
-Delete: rg-ado-tf-demo
+1. Go to Azure Portal
+2. Open Resource groups
+3.Delete: rg-ado-tf-demo
 
 This ensures you avoid unnecessary Azure costs.
 
