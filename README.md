@@ -42,6 +42,7 @@ Resource Group: rg-ado-tf-demo
 | **AzureRM Provider**       | Azure resource creation        |
 
 📁 Repository Structure
+```
 .
 ├── terraform/
 │   ├── main.tf
@@ -49,8 +50,10 @@ Resource Group: rg-ado-tf-demo
 │   ├── variables.tf
 │   ├── outputs.tf
 │   └── terraform.tfvars
+│
 ├── azure-pipelines.yml
 └── README.md
+```
 ▶️ How to Run This Yourself
 
 You can follow these steps to recreate the deployment, or simply review them to understand how the project is structured.
