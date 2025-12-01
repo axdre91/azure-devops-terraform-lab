@@ -1,7 +1,7 @@
 🚀 Azure DevOps + Terraform: Automated VNet Deployment
 
 <p align="center">
-  <img src="assets/Azure_DevOps_Terraform_Architecture.png" alt="Azure DevOps Terraform Architecture Diagram" width="700">
+  <img src="assets/ChatGPT Image Nov 30, 2025, 09_10_33 PM.png" alt="Azure DevOps Terraform Architecture Diagram" width="750">
 </p>
 
 
