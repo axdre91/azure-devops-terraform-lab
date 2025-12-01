@@ -1,12 +1,8 @@
 🚀 Azure DevOps + Terraform: Automated VNet Deployment
 
 <p align="center">
-  <img src="./assets/ado-tf-architecture.png" alt="Azure DevOps Terraform Architecture Diagram" width="650">
+  <img src="assets/Azure_DevOps_Terraform_Architecture.png" alt="Azure DevOps Terraform Architecture Diagram" width="700">
 </p>
-
-<p align="center"><em>
-Azure DevOps CI/CD pipeline deploying Azure VNet + subnets using Terraform.
-</em></p>
 
 
 This project demonstrates how I built a fully automated Azure infrastructure deployment using Terraform and Azure DevOps Pipelines. The pipeline formats, validates, plans, and deploys a Virtual Network (VNet) with multiple subnets — all automatically, using a clean CI/CD workflow.
