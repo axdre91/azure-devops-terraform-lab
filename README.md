@@ -1,4 +1,5 @@
 Tech Stack: Azure DevOps · Terraform · Azure CLI · Azure Blob Storage · YAML
+
 🧱 Resources Deployed:
 
 Azure Resource Group
