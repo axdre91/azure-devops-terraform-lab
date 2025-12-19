@@ -1,3 +1,6 @@
+## 🎥 Demo Videos
+- [Loom Video 1: Azure Devops + Terraform](https://www.loom.com/share/8ab4c3c7147b455aa3ad1365a2fa4b6b)
+
 🚀 Azure DevOps + Terraform: Automated VNet Deployment
 
 <p align="center">
