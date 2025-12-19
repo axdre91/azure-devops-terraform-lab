@@ -1,7 +1,7 @@
 Tech Stack: Azure DevOps · Terraform · Azure CLI · Azure Blob Storage · YAML
 
 Azure DevOps + Terraform CI/CD Lab
-Built a production-style Azure DevOps pipeline that runs Terraform fmt/validate/plan, stores the plan as an artifact, enforces a manual approval gate, and applies infrastructure using remote state in Azure Blob Storage.
+Walkthrough of an Azure DevOps pipeline deploying Azure infrastructure with Terraform, including remote state, plan artifacts, and a manual approval gate before apply.
 
 ## 🎥 Demo Videos
 - [Loom Video 1: Azure Devops + Terraform](https://www.loom.com/share/8ab4c3c7147b455aa3ad1365a2fa4b6b)
