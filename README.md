@@ -1,4 +1,13 @@
 Tech Stack: Azure DevOps · Terraform · Azure CLI · Azure Blob Storage · YAML
+🧱 Resources Deployed:
+
+Azure Resource Group
+
+Azure Virtual Network
+
+Azure Subnets
+
+(Intentionally simple to keep focus on pipeline design and Terraform workflow.)
 
 Azure DevOps + Terraform CI/CD Lab
 Walkthrough of an Azure DevOps pipeline deploying Azure infrastructure with Terraform, including remote state, plan artifacts, and a manual approval gate before apply.
