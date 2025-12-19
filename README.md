@@ -5,7 +5,7 @@ Walkthrough of an Azure DevOps pipeline deploying Azure infrastructure with Terr
 
 ## 🎥 Demo Videos
 - [Loom Video 1: Azure Devops + Terraform](https://www.loom.com/share/8ab4c3c7147b455aa3ad1365a2fa4b6b)
-🔍 What This Lab Demonstrates (Recruiter-Scan Friendly)
+🔍 What This Lab Demonstrates
 
 -Infrastructure as Code using Terraform
 
