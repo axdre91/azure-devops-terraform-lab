@@ -28,111 +28,45 @@ Walkthrough of an Azure DevOps pipeline deploying Azure infrastructure with Terr
 </p>
 
 
-This project demonstrates how I built a fully automated Azure infrastructure deployment using Terraform and Azure DevOps Pipelines. The pipeline formats, validates, plans, and deploys a Virtual Network (VNet) with multiple subnets — all automatically, using a clean CI/CD workflow.
+# Azure DevOps + Terraform Remote State Lab
 
-This repo is intentionally simple, easy to follow, and focused on real-world DevOps practices.
+This lab demonstrates deploying Azure infrastructure using **Terraform** with a **remote backend** and a **production-style Azure DevOps pipeline**.  
+The pipeline validates, plans, and applies infrastructure changes with a manual approval gate before apply.
 
-🔥 What This Project Shows (for recruiters & reviewers)
+## Architecture (High Level)
+- Azure Resource Group
+- Virtual Network (VNet)
+- Subnets
+- Terraform remote state stored in Azure Storage Account
+- CI/CD pipeline in Azure DevOps
 
-Infrastructure-as-Code using Terraform
+## Pipeline Flow
+1. **Format & Validate**
+   - Runs `terraform fmt` and `terraform validate`
+2. **Plan**
+   - Initializes Terraform with an AzureRM remote backend
+   - Generates a `tfplan` file
+   - Publishes the plan as a pipeline artifact
+3. **Manual Approval**
+   - Requires approval before changes are applied
+4. **Apply**
+   - Downloads the saved plan artifact
+   - Applies infrastructure changes using `terraform apply`
 
-Azure resource creation using AzureRM provider
+## Key Features
+- AzureRM remote backend for state management
+- Secure authentication using Azure DevOps Service Connection
+- Manual approval gate (production-style control)
+- Artifact-based plan/apply separation
+- Clean, repeatable Infrastructure-as-Code workflow
 
-Automated CI/CD using Azure DevOps Pipelines
+## Tools & Technologies
+- Terraform
+- Azure DevOps Pipelines (YAML)
+- Azure CLI
+- Azure Resource Manager (AzureRM provider)
 
-Manual approval gate before apply (production-style control)
-
-Use of a secure Azure Service Connection
-
-Clean and modular Terraform structure
-
-Proper documentation 
-🧱 Architecture Overview
-
-Below is the high-level architecture for what this pipeline deploys:
-
-```
-Resource Group: rg-ado-tf-demo
-└── Virtual Network: vnet-ado-demo
-    ├── Address Space: 10.10.0.0/16
-    ├── Subnets
-    │   ├── subnet-app   (10.10.1.0/24)
-    │   ├── subnet-db    (10.10.2.0/24)
-    │   └── subnet-mgmt  (10.10.10.0/24)
-```
-
-🔧 Tools Used
-| Tool                       | Purpose                        |
-| -------------------------- | ------------------------------ |
-| **Terraform**              | Provision Azure resources      |
-| **Azure DevOps Pipelines** | CI/CD workflow                 |
-| **Azure CLI Task**         | Authentication inside pipeline |
-| **AzureRM Provider**       | Azure resource creation        |
-
-📁 Repository Structure
-```
-.
-├── terraform/
-│   ├── main.tf
-│   ├── providers.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   └── terraform.tfvars
-│
-├── azure-pipelines.yml
-└── README.md
-```
-▶️ How to Run This Yourself
-
-You can follow these steps to recreate the deployment, or simply review them to understand how the project is structured.
-
-1. Prerequisites
-
-Azure subscription
-
-Azure DevOps project
-
-Azure Service Connection (I used: adolab2)
-
-Terraform installed (optional – pipeline runs it automatically)
-
-2. Update Your Service Connection Name
-
-In azure-pipelines.yml, update:
-azureSubscription: 'adolab2'
-
-Replace adolab2 with your Azure DevOps service connection name.
-
-3. Push Your Code to Azure DevOps Repo
-   Run:
-git add .
-git commit -m "Initial commit for Terraform DevOps pipeline"
-git push
-
-4. Run the Pipeline
-
-The pipeline will:
-
-Validate Terraform
-
-Plan the deployment
-
-Pause for your approval
-
-Apply and create all Azure resources
-
-The approval step is intentional — mirrors real production workflows.
-
-5. Clean Up Resources (Avoid Charges)
-
-Terraform can destroy EVERYTHING deployed:
-terraform destroy
-
-Or delete the Resource Group directly:
-
-1. Go to Azure Portal
-2. Open Resource groups
-3.Delete: rg-ado-tf-demo
-
-This ensures you avoid unnecessary Azure costs.
+## Notes
+- This lab is intentionally simple to focus on **pipeline structure**, **state management**, and **Terraform workflow best practices**.
+- Re-running the pipeline is safe and idempotent when resource names remain consistent.
 
